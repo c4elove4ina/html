@@ -2,6 +2,7 @@
     margin: 0%;
     box-sizing: border-box;
 }
+
 .header {
     width: 100;
     height: 100px;
@@ -13,15 +14,47 @@
     justify-content: flex-start;
     align-items: center;
 }
-.header-logo{
+
+.header-logo {
     height: 100%;
 
-}.header-nav{
+}
+
+.header-nav {
     display: flex;
     gap: 20px;
 }
+
 .header-nav a {
     text-decoration: none;
     color: black;
     font-size: 20px;
+}
+
+.hiden-block {
+    opacity: 0;
+    width: 400px;
+    height: 200px;
+    background-color: bisque;
+    transition: 0.5s;
+    transform: scale(0) rotate(0);
+}
+
+#check:checked~.hiden-block {
+    transform: scale(1) rotate(360deg);
+    opacity: 100%;
+}
+
+.label-hidden {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: brown;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#check {
+    display: none;
 }
