@@ -35,26 +35,29 @@
     opacity: 0;
     width: 400px;
     height: 200px;
-    background-color: bisque;
+    background-color: rgb(13, 200, 194);
     transition: 0.5s;
     transform: scale(0) rotate(0);
+    position: fixed;
+    right: -420%;
 }
 
 #check:checked~.hiden-block {
     transform: scale(1) rotate(360deg);
     opacity: 100%;
+    right: 0;
 }
 
 .label-hidden {
     display: block;
     width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    height: 5px;
     background-color: rgb(255, 0, 0);
-    border: 1px solid black;
+
     cursor: pointer;
-    position: sticky;
+    position: fixed;
     top: 20px;
+    right: 150px;
     
 }
 
@@ -67,4 +70,32 @@ body{
 .negr{
     background-color: blue;
     height: 500px;
+}
+.label-hidden::after{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 5px;
+    background-color: azure;
+    position: absolute;
+    top: 8px;
+    transition: 0.5s;
+}
+.label-hidden::before{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 5px;
+    background-color: rgb(0, 255, 30);
+    position: absolute;
+    top: -8px;
+    transition: 0.5s;
+}
+#check:checked ~ .label-hidden::before{
+    transform: rotate(45deg);
+    top: 0%;
+}
+#check:checked ~ .label-hidden::after{
+    transform: rotate(-45deg);
+    top: 0%;
 }
